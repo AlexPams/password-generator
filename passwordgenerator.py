@@ -2,21 +2,21 @@ from secrets import choice
 
 
 
-def generate(length):
-    simbols = ascii()
+def generate(length, banned_symbols):
+    symbols = ascii(banned_symbols)
     password = []
     for i in range(length):
-        password.append(choice(simbols))
+        password.append(choice(symbols))
     return ''.join(password)
 
 
-def ascii():
-    simbols = []
+def ascii(banned_symbols):
+    symbols = []
     for i in range(ord('!'), ord('~') + 1):
-        if i == 36 or i == 46 or i == 47 or i == 63:
+        if chr(i) in banned_symbols:
             continue
-        simbols.append(chr(i))
-    return simbols
+        symbols.append(chr(i))
+    return symbols
 
 
 def write_in_file(passwords):
