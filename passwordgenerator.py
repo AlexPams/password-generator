@@ -1,7 +1,6 @@
 from secrets import choice
 
 
-
 def generate(length, banned_symbols):
     symbols = ascii(banned_symbols)
     password = []
@@ -27,5 +26,3 @@ def write_in_file(passwords):
     except Exception:
         with open('pass.txt', 'w') as file:
             file.write('\n'.join(passwords) + '\n')
-
-

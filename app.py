@@ -13,7 +13,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Password Generator")
         self.button_generate_password = QPushButton("Generate")
         self.line_edit_password = QLineEdit(str(self.password))
-        self.label_password_length = QLabel("Введите длинну пароля")
+        self.label_password_length = QLabel("Введите длину пароля")
         self.lineedit_password_length = QLineEdit()
         self.label_banned_symbols = QLabel("Введите нежелательные символы")
         self.lineedit_banned_symbols = QLineEdit()
@@ -38,7 +38,6 @@ class MainWindow(QMainWindow):
         self.password = generate(int(self.lineedit_password_length.text().strip()),
                                  list(self.lineedit_banned_symbols.text()))
         self.line_edit_password.setText(str(self.password))
-
 
 
 app = QApplication([])
