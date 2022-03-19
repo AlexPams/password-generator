@@ -9,12 +9,14 @@
 <div class="limiter">
     <div class="container">
         <div class="wrap">
-            <form class="form " action="password" method="post">
+            <form class="form " action="/" method="post">
                 <span class="form_title"> Password Generator </span>
                 <div class="wrap_input validate-input">
-                    <input class="input" type="number" name="password_length" min="0" value="0" placeholder="Введете длину пароля"/>
+                    <input class="input" type="number" name="password_length" min="0" value="8"
+                           placeholder="Введете длину пароля"/>
                     <input class="input" type="text" name="banned_symbols" placeholder="Введите нежелательный символы"/>
                 </div>
+                <div class="flash"> {{''.join(get_flashed_messages())}}</div>
                 <div class="container_form_btn">
                     <input type="submit" value="Generate" class="form_btn"/>
                 </div>
