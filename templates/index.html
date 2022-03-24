@@ -12,10 +12,24 @@
             <form class="form " action="/" method="post">
                 <span class="form_title"> Password Generator </span>
                 <div class="wrap_input validate-input">
-                    <input class="input" type="number" name="password_length" min="0" value="8"
+                    <input class="input" type="number" name="password_length" min="0" value="8" id="length"
                            placeholder="Введете длину пароля"/>
-                    <input class="input" type="text" name="banned_symbols" placeholder="Введите нежелательный символы"/>
+                    <textarea class="input texta" name="banned_symbols" id="symbols">Введите нежелательный символы</textarea>
                 </div>
+              <div class = "checkboxes_wrapper">
+                  <div class="element_wrapper">
+                      <input type="checkbox" class="checkbox" id="checkbox1" onchange="chbox1()"/>
+                      <label for="checkbox1">Убрать буквы</label>
+                  </div>
+                  <div class="element_wrapper">
+                      <input type="checkbox"  class="checkbox" id="checkbox2" onchange="chbox2()"/>
+                      <label for="checkbox2">Убрать специальные символы</label>
+                  </div>
+                  <div class="element_wrapper">
+                      <input type="checkbox" class="checkbox" id="checkbox3" onchange="chbox3()"/>
+                      <label for="checkbox3">Убрать цифры</label>
+                  </div>
+              </div>
                 <div class="flash"> {{''.join(get_flashed_messages())}}</div>
                 <div class="container_form_btn">
                     <input type="submit" value="Generate" class="form_btn"/>
@@ -24,5 +38,6 @@
         </div>
     </div>
 </div>
+<script src="{{url_for('static', filename='js/script.js')}}"></script>
 </body>
 </html>
