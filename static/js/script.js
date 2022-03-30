@@ -2,13 +2,15 @@ const ch1 = document.getElementById("checkbox1");
 const ch2 = document.getElementById("checkbox2");
 const ch3 = document.getElementById("checkbox3");
 const symbols = document.getElementById("symbols");
-let letters = " a b c d e f g h i j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";
-let digits = "1 2 3 4 5 6 7 8 9 0";
+let letters = "a b c d e f g h i j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z ";
+let digits = "1 2 3 4 5 6 7 8 9 0 ";
 let specialSymbols = "!  # $ % & ' ( ) * + , - _ [ ] / . ^ '\\' `  0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ { | } ~ ";
+let startStr = "Введите нежелательные символы";
+
 
 function chbox1(params) {
   if (ch1.checked) {
-    if(symbols.value == "Введите нежелательный символы"){
+    if(symbols.value == startStr){
       symbols.value = letters;
     }else{
       symbols.value += letters;
@@ -23,7 +25,7 @@ function chbox1(params) {
 
 function chbox2(params) {
   if (ch2.checked) {
-    if(symbols.value == "Введите нежелательный символы"){
+    if(symbols.value == startStr){
       symbols.value = specialSymbols;
     }else{
       symbols.value += specialSymbols;
@@ -38,7 +40,7 @@ function chbox2(params) {
 
 function chbox3() {
   if (ch3.checked) {
-    if(symbols.value == "Введите нежелательный символы"){
+    if(symbols.value == startStr){
       symbols.value = digits;
     }else{
       symbols.value += digits;

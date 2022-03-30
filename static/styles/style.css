@@ -46,8 +46,9 @@ body {
     width: 100%;
     background-color: #ffffff;
     border: 1px solid #e6e6e6;
+    padding-bottom: 20px;
 }
-input.input {
+input.input, textarea {
     display: block;
     width: 100%;
     margin: 0;
@@ -55,6 +56,8 @@ input.input {
     box-sizing: border-box;
     border: none;
     outline: none;
+  overflow:hidden;
+  resize:none;
 }
 .input{
     display: block;
@@ -64,18 +67,6 @@ input.input {
     font-size: 15px;
     color: #666;
     line-height: 1.2;
-}
-
-#symbols{
-  padding: 1.5rem 1rem 1.5rem 1rem;
-  outline:none;
-  overflow: hidden;
-  font-size: 15px;
-  font-family: sans-serif;
-  min-width:100%;
-  min-height:50px;
-  border:none;
-  resize:none;
 }
 
 .element-wrapper {
@@ -189,11 +180,3 @@ input.input {
     background-color: blue;
 }
 
-@media(max-width: 800px) {
-      .limiter{
-        width: auto;
-        margin-right: 30px;
-
-    }
-
-}
