@@ -4,7 +4,7 @@ const ch3 = document.getElementById("checkbox3");
 const symbols = document.getElementById("symbols");
 let letters = "a b c d e f g h i j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z ";
 let digits = "1 2 3 4 5 6 7 8 9 0 ";
-let specialSymbols = "!  # $ % & ' ( ) * + , - _ [ ] / . ^ '\\' `  0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ { | } ~ ";
+let specialSymbols = "!  # $ % & ' ( ) * + , - _ [ ] / . ^ '\\' `  : ; < = > ? @ { | } ~ ";
 let startStr = "Введите нежелательные символы";
 
 
@@ -59,3 +59,20 @@ textarea.addEventListener('keyup', function(){
     this.style.height = this.scrollHeight + "px";
   }
 });
+
+function generate() {
+            $.ajax({
+                type: "POST",
+                url: "/generate",
+                data: $('form').serialize(),
+                type: 'POST',
+                success: function(response) {
+                    var json = jQuery.parseJSON(response)
+                    $('#passw').html(json.passw)
+                    $('#passw').style.backgroundColor = "white"
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }

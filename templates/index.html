@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>Password Generator</title>
     <link rel="stylesheet" href={{url_for("static", filename="styles/style.css" )}}>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 </head>
 <body>
 <div class="limiter">
     <div class="container">
         <div class="wrap">
-            <form class="form " action="/" method="post">
+            <form class="form " action="/generate" method="post" name="form">
                 <span class="form_title"> Password Generator </span>
                 <div class="wrap_input validate-input">
                     <input class="input" type="number" name="password_length" min="0" value="8" id="length"
@@ -30,9 +31,9 @@
                       <label for="checkbox3">Убрать цифры</label>
                   </div>
               </div>
-                <div class="flash"> {{''.join(get_flashed_messages())}}</div>
+                <div id="passw" class="passw"></div>
                 <div class="container_form_btn">
-                    <input type="submit" value="Generate" class="form_btn"/>
+                    <input type="button" value="Generate" class="form_btn" onclick="generate();"/>
                 </div>
             </form>
         </div>
