@@ -8,6 +8,11 @@ let specialSymbols = "!  # $ % & ' ( ) * + , - _ [ ] / . ^ '\\' `  : ; < = > ? @
 let startStr = "Введите нежелательные символы";
 
 
+$(window).on('load', function() {
+  $('.preloader').fadeOut().end().delay(400).fadeOut('slow');
+});
+
+
 function chbox1(params) {
   if (ch1.checked) {
     if(symbols.value == startStr){
@@ -69,7 +74,6 @@ function generate() {
                 success: function(response) {
                     var json = jQuery.parseJSON(response)
                     $('#passw').html(json.passw)
-                    $('#passw').style.backgroundColor = "white"
                 },
                 error: function(error) {
                     console.log(error);
